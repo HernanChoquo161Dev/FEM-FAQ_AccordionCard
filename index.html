@@ -8,33 +8,68 @@
   
   <title>Frontend Mentor | FAQ Accordion Card</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
-
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
-
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
-
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
-
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main>
+    <!---->
+    <div class="flex-center accordion-card">
+      <!---->
+      <div class="accordion-card__picture">
+        <div class="accordion-card__image-container">
+          <img class="accordion-card__image" src="./images/illustration-woman-online-desktop.svg" alt="ilustration">
+        </div>
+        <img class="accordion-card__image-box" src="./images/illustration-box-desktop.svg" alt="box-ilustration">
+      </div>
+      <!---->
+      <section class="flex-center-column accordion-card__info">
+        <h1 class="accordion-card__tittle">FAQ</h1>
+        <!---->
+        <ul class="flex-center-column list-questions">
+          <li class="list-questions__item">
+            <div class="flex-center tittle-question">
+              <h2 class="tittle-question__tittle">How many team members can I invite?</h2>
+              <img class="tittle-question__picture" src="./images/icon-arrow-down.svg" alt="arrow-picture">
+            </div>
+            <p class="list-questions__text" hidden="true">You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
+            <hr class="list-questions__separator">
+          </li>
+          <li class="list-questions__item">
+            <div class="flex-center tittle-question">
+              <h2 class="tittle-question__tittle">What is the maximum file upload size?</h2>
+              <img class="tittle-question__picture" src="./images/icon-arrow-down.svg" alt="arrow-picture">
+            </div>
+            <p class="list-questions__text" hidden="true">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+            <hr class="list-questions__separator">
+          </li>
+          <li class="list-questions__item">
+            <div class="flex-center tittle-question">
+              <h2 class="tittle-question__tittle">How do I reset my password?</h2>
+              <img class="tittle-question__picture" src="./images/icon-arrow-down.svg" alt="arrow-picture">
+            </div>
+            <p class="list-questions__text" hidden="true">Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.</p>
+            <hr class="list-questions__separator">
+          </li>
+          <li class="list-questions__item">
+            <div class="flex-center tittle-question">
+              <h2 class="tittle-question__tittle">Can I cancel my subscription?</h2>
+              <img class="tittle-question__picture" src="./images/icon-arrow-down.svg" alt="arrow-picture">
+            </div>
+            <p class="list-questions__text" hidden="true">Yes! Send us a message and we’ll process your request no questions asked.</p>
+            <hr class="list-questions__separator">
+          </li>
+          <li class="list-questions__item">
+            <div class="flex-center tittle-question">
+              <h2 class="tittle-question__tittle">Do you provide additional support?</h2>
+              <img class="tittle-question__picture" src="./images/icon-arrow-down.svg" alt="arrow-picture">
+            </div>
+            <p class="list-questions__text" hidden="true">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+            <hr class="list-questions__separator">
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <script src="./script.js"></script>
 </body>
 </html>
