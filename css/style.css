@@ -1,0 +1,84 @@
+/**/
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+/**/
+:root{
+/**/
+}
+*,
+*::before,
+*::after{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/**/
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-center-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/**/
+body{
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    width: 100vw;
+    height: 100vh;
+    padding: 16vh;
+    font-size: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+/**/
+.accordion-card{
+    /*flex-center*/
+    background-color: #ffffff;
+    max-width: 920px;
+    min-width: 680px;
+    height: 510px;
+    margin: auto;
+    border-radius: 20px;
+}
+        /**/
+        .list-questions{
+            position: relative;
+            flex-basis: 80%;
+            height: 80%;
+            /*flex-center-column*/
+            list-style: none;
+        }
+        .list-questions__item{
+            /*flex-center*/
+            flex-wrap: wrap;
+            width: 100%;
+            flex-basis: 10%;
+            margin-top: 3%;
+        }
+        /**/
+        .tittle-question{
+            align-self: flex-start;
+            display: block;
+            width: 100%;
+        }
+        .tittle-question__tittle{
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 400;
+            flex-basis: 96%;
+            width: 96%;
+        }
+        .tittle-question__picture{
+        }
+        .list-questions__text{
+            width: 100%;
+            text-align: left;
+        }
+        .list-questions__separator{
+            display: block;
+            color:hsl(240, 5%, 91%);
+            width: 100%;
+            align-self: flex-end;
+        }
