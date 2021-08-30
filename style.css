@@ -43,11 +43,6 @@ body{
     height: 510px;
     margin: auto;
     border-radius: 20px;
-
-    background-image: url("./images/bg-pattern-desktop.svg");
-    background-size: 90%;
-    background-repeat: no-repeat;
-    background-position: left -490% top 80%;
 }
     /**/
     .accordion-card__picture{
@@ -61,13 +56,18 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        background-image: url("./images/bg-pattern-desktop.svg");
+        background-size: 200%;
+        background-repeat: no-repeat;
+        background-position: 118% 70%;
     }
     .accordion-card__image-container{
         position: relative;
         width: 100%;
         display: inline-block;
         overflow: hidden;
-        top: 1%;
+        top: -5%;
     }
     .accordion-card__image{
         position: relative;
