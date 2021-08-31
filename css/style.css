@@ -1,5 +1,5 @@
 /**/
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 /**/
 :root{
 /**/
@@ -26,11 +26,14 @@
 /**/
 body{
     background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-    width: 100vw;
-    height: 100vh;
-    padding: 16vh;
+    background-attachment: fixed;
     font-size: 12px;
     font-family: 'Kumbh Sans', sans-serif;
+}
+/**/
+.page-main{
+    position: relative;
+    margin-top: 15vh;
 }
 /**/
 .accordion-card{
@@ -39,7 +42,7 @@ body{
     background-color: #ffffff; /*La imagen cambia de tamaño en relacion a el tamaño del 
                                     componente(100%) y no, a la seccion de la imagen (50%)*/
     max-width: 920px;
-    min-width: 680px;
+    min-width: 500px;
     height: 510px;
     margin: auto;
     border-radius: 20px;
@@ -47,17 +50,15 @@ body{
     /**/
     .accordion-card__picture{
         position: relative;
-        flex-basis: 50%;
-        height: 100%;
-        
-        flex-grow: 1;
-        flex-shrink: 0;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
 
-        background-image: url("./images/bg-pattern-desktop.svg");
+        flex-basis: 50%;
+        height: 100%;
+
+        background-image: url("/images/bg-pattern-desktop.svg");
         background-size: 200%;
         background-repeat: no-repeat;
         background-position: 118% 70%;
@@ -77,17 +78,13 @@ body{
     .accordion-card__image-box{
         position: absolute;
         width: 36%;
-        top: 44%;
+        top: 38%;
         right: 81.4%;
     }
     /**/
     .accordion-card__info{
-        align-items: flex-start;
-        
         flex-basis: 50%;
-        flex-shrink: 2;
-        flex-grow: 0;
-        
+
         height: 100%;
         /*flex-center-column*/
         padding: 5% 0;
@@ -96,15 +93,12 @@ body{
     /**/
     .accordion-card__tittle{
         font-weight: 700;
-        font-size: 26px;
-        margin-bottom: 6%;
+        font-size: 30px;
         align-self: flex-start;
     }
         /**/
         .list-questions{
             position: relative;
-            flex-basis: 80%;
-            height: 80%;
             /*flex-center-column*/
             list-style: none;
         }
@@ -127,15 +121,20 @@ body{
         }
         .list-questions__tittle{
             display: inline-block;
+            color: hsl(237, 12%, 33%);
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 400;
             flex-basis: 98.2%;
             width: 96%;
+            padding-right: 10%;
+        }
+        .list-questions__tittle:hover{
+            color: hsl(14, 88%, 65%);
         }
         .list-questions__icon{
             display: inline-block;
-            width: 1.8%;
-            height: 18%;
+            width: 3%;
+            height: 100%;
             transition-duration: 0.35s;
         }
         /**/
@@ -143,7 +142,7 @@ body{
             transform: rotate(180deg);
         }
         .list-questions__container-text{
-            color: var(--light-grey);
+            color: hsl(240, 6%, 50%);
             width: 100%;
             max-height: 0px;
             overflow: hidden;
@@ -151,17 +150,76 @@ body{
         }
         /**/
         .list-questions__container-text--show{
+            max-height: 100px;
             padding-bottom: 5%;
             padding-right: 5%;
-            max-height: 100px;
         }
         .list-questions__text{
             width: 100%;
             text-align: left;
         }
         .list-questions__split{
-            display: block;
-            color:hsl(240, 5%, 91%);
-            width: 100%;
             align-self: flex-end;
+
+            display: block;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid hsl(240, 5%, 91%);
         }
+
+/**/
+@media screen and (max-width: 1000px) {
+    /**/
+    .accordion-card__picture{
+        flex-basis: 60%;
+    }
+    .accordion-card__info{
+        flex-basis: 40%;
+        padding-right: 5%;
+    }
+}
+/**/
+@media screen and (max-width: 700px) {
+    /**/
+    .accordion-card{
+        /*flex-center*/
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0;
+
+        min-width: 0;
+        flex-basis: 90%;
+        height: 500px;
+    }
+        /**/
+        .accordion-card__picture{
+            width: 100%;
+            flex: 0 1 10%;
+
+            background-image: url("/images/bg-pattern-mobile.svg");
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+        .accordion-card__image-container{
+            width: 80%;
+            top: -58%;
+            left: 10%;
+        }
+        .accordion-card__image{
+            right: 0;
+            src: url("/images/illustration-woman-online-mobile.svg");
+        }
+        .accordion-card__image-box{
+            top: -20%;
+            right: 58%;
+        }
+        .accordion-card__info{
+            justify-content: flex-start;
+
+            width: 100%;
+            flex: 0 1 90%;
+            padding: 0;
+        }
+}
