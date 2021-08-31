@@ -1,35 +1,45 @@
-const questionItem = document.querySelectorAll(".list-questions__item");
-const questionText = document.querySelectorAll(".list-questions__text");
+const listItem = document.querySelectorAll(".list-questions__item");
+const listText = document.querySelectorAll(".list-questions__container-text");
+const listIcon = document.querySelectorAll(".list-questions__icon");
 
-function animationVisible(animObj){
-    animObj.style.display = "block";
+class CheckItem{
+    constructor() { this.lastItem = -1; }
+    getLastItem() { return this.lastItem; };
+    setLastItem(lastItem) { this.lastItem = lastItem; };
+};
+
+let checkOut = new CheckItem();
+
+function addAnimation(objText, objIcon) {
+    objText.classList.toggle("list-questions__container-text--show");
+    objIcon.classList.toggle("list-questions__icon--rotate");
 }
-function animationHidden(animObj){
-    animObj.style.display = "none";
-}
-function animationMove(animElem, animText){
-    animElem.addEventListener('click', function (event) {
-        if(animElem.classList.contains("animationSizeItem")){
-            animElem.style.flexBasis="100px";
-            animElem.classList.toggle("animationSizeItem");
-            animElem.classList.toggle("animationSizeItemInverse");
-            
-            setTimeout(animationHidden(animText), 200);
+
+function animation(objEvent, objText, objIcon, objCheckOut, index){
+    objEvent.addEventListener('click', function (event) {
+        if(objCheckOut.getLastItem() != -1){
+            if(objCheckOut.getLastItem() != index){
+                addAnimation(objText,objIcon);
+                
+                let elemText = document.querySelectorAll(".list-questions__container-text");
+                let elemIcon = document.querySelectorAll(".list-questions__icon");
+
+                addAnimation(elemText[objCheckOut.getLastItem()],elemIcon[objCheckOut.getLastItem()]);
+                objCheckOut.setLastItem(index);
+            }
+            else{
+                addAnimation(objText,objIcon);
+                objCheckOut.setLastItem(-1);
+            }
         }
         else{
-            if(animElem.classList.contains("animationSizeItemInverse")){
-                animElem.style.flexBasis="10%";
-                animElem.classList.toggle("animationSizeItemInverse");
-            }
-            animElem.classList.toggle("animationSizeItem");
-
-            setTimeout(animationVisible(animText), 800);
+            addAnimation(objText,objIcon);
+            objCheckOut.setLastItem(index);
         }
     });
 }
 
-console.log(questionText);
-
-for(a = 0; a < 5; a++){
-    animationMove(questionItem[a], questionText[a]);
+for(a = 0; a < listItem.length; a++){
+    animation(listItem[a], listText[a], listIcon[a], checkOut, a);
 }
+
