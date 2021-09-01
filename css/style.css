@@ -1,9 +1,10 @@
-/**/
+/*CSS - Text font*/
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
-/**/
+/*CSS - Variables*/
 :root{
-/**/
+
 }
+/*CSS - Normalize*/
 *,
 *::before,
 *::after{
@@ -11,7 +12,7 @@
     padding: 0px;
     box-sizing: border-box;
 }
-/**/
+/*CSS - Reusable code*/
 .flex-center{
     display: flex;
     justify-content: center;
@@ -23,21 +24,22 @@
     justify-content: center;
     align-items: center;
 }
-/**/
+/*CSS - Modifying the page viewport*/
 body{
     background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
     background-attachment: fixed;
+    /*--*/
     font-size: 12px;
     font-family: 'Kumbh Sans', sans-serif;
 }
-/**/
+/*CSS - main content*/
 .page-main{
     margin: 0 5%;
     margin-top: 15vh;
 }
-/**/
+/**CSS - Container component**/
 .accordion-card{
-    /*--flex-center*/
+    /*--Reusable class - flex-center*/
     background-color: #ffffff;
     /*--*/
     position: relative;
@@ -52,15 +54,14 @@ body{
     /*--*/
     border-radius: 20px;
 }
-    /**/
+    /**CSS - first element**/
     .accordion-card__picture{
-        /*--*/
         position: relative;
         /*--*/
         flex-basis: 50%;
         height: 100%;
         /*--*/
-        background-image: url("/images/bg-pattern-desktop.svg"), url("/images/illustration-woman-online-desktop.svg");
+        background-image: url("./images/bg-pattern-desktop.svg"), url("./images/illustration-woman-online-desktop.svg");
         background-size: 200%, 100%;
         background-repeat: no-repeat, no-repeat;
         background-position: 118% 70%, -80px center;
@@ -70,7 +71,6 @@ body{
         visibility: hidden;
     }
     .accordion-card__image-box{
-        /*--*/
         position: absolute;
         /*--*/
         width: 40%;
@@ -78,43 +78,40 @@ body{
         top: 42%;
         right: 79%;
     }
-    /**/
+    /**CSS - second element**/
     .accordion-card__info{
-        /*--flex-center-column*/
-        align-items: flex-start;
-        /*--*/
         flex-basis: 50%;
         height: 100%;     
+        /*--*/
+        /*--Reusable class - flex-center-column*/
+        align-items: flex-start;
         /*--*/
         border-radius: 0 20px 20px 0;   
         /*--*/
         padding-top: 8%;
     }
-    /**/
     .accordion-card__tittle{
-        /*--*/
         display: inline-block;
-
+        /*--*/
         width: 100%;
         flex-basis: 15%;
         /*--*/
         font-weight: 700;
         font-size: 30px;
     }
-        /****/
+        /**CSS - independent block**/
         .list-questions{
-            /*--*/
             position: relative;
             /*--*/
             width: 85%;
             flex-basis: 85%;
-            /*flex-center-column*/
+            /*--Reusable class - flex-center-column*/
             justify-content: flex-start;
             /*--*/
             list-style: none;
         }
         .list-questions__item{
-            /*flex-center*/
+            /*--Reusable class - flex-center*/
             flex-wrap: wrap;
             /*--*/
             width: 100%;
@@ -125,17 +122,21 @@ body{
             position: relative;
             /*--*/
             align-self: flex-start;
-            /*--flex-center*/
+            /*--Reusable class - flex-center*/
             width: 100%;
+            /*--*/
             padding: 4.2% 0;
             padding-right: 4%;
         }
         .list-questions__tittle{
             display: inline-block;
+            /*--*/
+            flex-basis: 97%;
+            /*--*/
             color: hsl(237, 12%, 33%);
             font-size: 14px;
             font-weight: 400;
-            flex-basis: 97%;
+            /*--*/
             padding-right: 10%;
         }
         .list-questions__tittle:hover{
@@ -145,8 +146,10 @@ body{
             font-weight: 700;
         }
         .list-questions__icon{
-            display: inline-block;
             flex-basis: 3%;
+            /*--*/
+            display: inline-block;
+            /*--*/
             transition-duration: 0.35s;
         }
         .list-questions__icon--rotate{
@@ -154,29 +157,37 @@ body{
         }
         .list-questions__container-text{
             color: hsl(240, 6%, 50%);
+            /*--*/
             width: 100%;
             max-height: 0px;
             overflow: hidden;
+            /*--*/
             transition-duration: 0.35s;
         }
         /**/
         .list-questions__container-text--show{
             padding-bottom: 3%;
             padding-right: 5%;
+            /*--*/
             max-height: 100px;
         }
         .list-questions__text{
             width: 100%;
+            /*--*/
             text-align: left;
         }
         .list-questions__split{
             display: block;
-            width: 100%;
+            /*--*/
             align-self: flex-end;
+            /*--*/
+            width: 100%;
+            /*--*/
             border: none;
             border-bottom: 1px solid hsl(240, 5%, 91%);
         }
-/**/
+
+/*CSS - Changes for the adaptation responsive*/
 @media screen and (max-width: 1000px) {
     .accordion-card__picture{
         /*--*/
@@ -184,7 +195,7 @@ body{
     }
     /****/
     .accordion-card__info{
-        /*--*/
+        /*--Reusable class - flex-center-column*/
         flex-basis: 40%;
     }
     /****/
@@ -195,7 +206,7 @@ body{
             flex-basis: 4%;
         }
 }
-/**/
+/*CSS - Changes for the adaptation responsive*/
 @media screen and (max-width: 400px) {
 /**/
 .page-main{
@@ -203,9 +214,9 @@ body{
     margin-top: 20vh;
     margin-bottom: 5vh;
 }
-/****/
+/*CSS - Changes for the adaptation of the mobile*/
 .accordion-card{
-    /*--flex-center*/
+    /*--Reusable class - flex-center*/
     flex-direction: column;
     /*--*/
     max-width: none; 
@@ -220,7 +231,7 @@ body{
         width: 100%;
         flex-basis: 22%;
         /*--*/
-        background-image: url("/images/bg-pattern-mobile.svg");
+        background-image: url("./images/bg-pattern-mobile.svg");
         background-size: 80%;
         background-position: center top;
     }
@@ -242,7 +253,7 @@ body{
     }
     /****/
     .accordion-card__info{
-        /*--flex-center-column*/
+        /*--Reusable class - flex-center-column*/
         align-items: center;
         /*--*/
         justify-content: flex-start;
@@ -257,7 +268,7 @@ body{
     }
     /****/
         .list-questions__question{
-            /*--flex-center*/
+            /*--Reusable class - flex-center*/
             padding: 5% 0;
             padding-right: 0;
         }
