@@ -141,6 +141,9 @@ body{
         .list-questions__tittle:hover{
             color: hsl(14, 88%, 65%);
         }
+        .list-questions__tittle--click-down{
+            font-weight: 700;
+        }
         .list-questions__icon{
             display: inline-block;
             flex-basis: 3%;
