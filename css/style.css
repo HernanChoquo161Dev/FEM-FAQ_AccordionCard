@@ -2,12 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 /*CSS - Variables*/
 :root{
-    --gradient-violet: hsl(273, 75%, 66%);
-    --gradient-violet: hsl(240, 73%, 65%);
 
-    --text-dark-desaturated-blue: hsl(238, 29%, 16%);
-    --text-orange: hsl(14, 88%, 65%);
-    
+    --width-size: 920px;
+    --width-size-min: calc(var(--width-size) * 0.7173);
+    --height-size: calc(var(--width-size) * 0.554);
+
+    --gradient-first-color: hsl(273, 75%, 66%);
+    --gradient-second-color: hsl(240, 73%, 65%);
+
+    --tittle-color: hsl(238, 29%, 16%);
+    --tittle-hover-color: hsl(14, 88%, 65%);
+
+    --text-color:hsl(240, 6%, 50%);
+
+    --divider-color:hsl(240, 5%, 91%);
 }
 /*CSS - Normalize*/
 *,
@@ -31,7 +39,7 @@
 }
 /*CSS - Modifying the page viewport*/
 body{
-    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    background: linear-gradient(var(--gradient-first-color), var(--gradient-second-color));
     background-attachment: fixed;
     /*--*/
     font-size: 12px;
@@ -49,11 +57,11 @@ body{
     /*--*/
     position: relative;
     /*--*/
-    max-width: 920px; 
-    width: 920px;
-    min-width: 740px;
+    max-width: var(--width-size); 
+    width: var(--width-size);
+    min-width: var(--width-size-min);
     /*--*/
-    height: 510px;
+    height: var(--height-size);
     /*--*/
     margin: auto;
     /*--*/
@@ -138,14 +146,14 @@ body{
             /*--*/
             flex-basis: 97%;
             /*--*/
-            color: hsl(237, 12%, 33%);
+            color: var(--tittle-color);
             font-size: 14px;
             font-weight: 400;
             /*--*/
             padding-right: 10%;
         }
         .list-questions__tittle:hover{
-            color: hsl(14, 88%, 65%);
+            color: var(--tittle-hover-color);
         }
         .list-questions__tittle--click-down{
             font-weight: 700;
@@ -161,7 +169,7 @@ body{
             transform: rotate(180deg);
         }
         .list-questions__container-text{
-            color: hsl(240, 6%, 50%);
+            color: var(--text-color);
             /*--*/
             width: 100%;
             max-height: 0px;
@@ -189,7 +197,7 @@ body{
             width: 100%;
             /*--*/
             border: none;
-            border-bottom: 1px solid hsl(240, 5%, 91%);
+            border-bottom: 1px solid var(--divider-color);
         }
 
 /*CSS - Changes for the adaptation responsive*/
