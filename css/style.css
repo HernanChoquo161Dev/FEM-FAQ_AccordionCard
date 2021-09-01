@@ -2,7 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 /*CSS - Variables*/
 :root{
+    --gradient-violet: hsl(273, 75%, 66%);
+    --gradient-violet: hsl(240, 73%, 65%);
 
+    --text-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --text-orange: hsl(14, 88%, 65%);
+    
 }
 /*CSS - Normalize*/
 *,
@@ -61,10 +66,10 @@ body{
         flex-basis: 50%;
         height: 100%;
         /*--*/
-        background-image: url("./images/bg-pattern-desktop.svg"), url("./images/illustration-woman-online-desktop.svg");
-        background-size: 200%, 100%;
+        background-image: url("../images/illustration-woman-online-desktop.svg"),url("../images/bg-pattern-desktop.svg");
+        background-size: 100%,200%;
         background-repeat: no-repeat, no-repeat;
-        background-position: 118% 70%, -80px center;
+        background-position: -80px center, 118% 70%;
     }
     .accordion-card__image-desktop{
         display: none;
@@ -231,7 +236,7 @@ body{
         width: 100%;
         flex-basis: 22%;
         /*--*/
-        background-image: url("./images/bg-pattern-mobile.svg");
+        background-image: url("../images/bg-pattern-mobile.svg");
         background-size: 80%;
         background-position: center top;
     }
