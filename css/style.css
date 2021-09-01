@@ -32,100 +32,110 @@ body{
 }
 /**/
 .page-main{
-    position: relative;
+    margin: 0 5%;
     margin-top: 15vh;
 }
 /**/
 .accordion-card{
-    /*flex-center*/
+    /*--flex-center*/
+    background-color: #ffffff;
+    /*--*/
     position: relative;
-    background-color: #ffffff; /*La imagen cambia de tamaño en relacion a el tamaño del 
-                                    componente(100%) y no, a la seccion de la imagen (50%)*/
-    max-width: 920px;
-    min-width: 500px;
+    /*--*/
+    max-width: 920px; 
+    width: 920px;
+    min-width: 740px;
+    /*--*/
     height: 510px;
+    /*--*/
     margin: auto;
+    /*--*/
     border-radius: 20px;
 }
     /**/
     .accordion-card__picture{
+        /*--*/
         position: relative;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
+        /*--*/
         flex-basis: 50%;
         height: 100%;
-
-        background-image: url("/images/bg-pattern-desktop.svg");
-        background-size: 200%;
-        background-repeat: no-repeat;
-        background-position: 118% 70%;
+        /*--*/
+        background-image: url("/images/bg-pattern-desktop.svg"), url("/images/illustration-woman-online-desktop.svg");
+        background-size: 200%, 100%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 118% 70%, -80px center;
     }
-    .accordion-card__image-container{
-        position: relative;
-        width: 100%;
-        display: inline-block;
-        overflow: hidden;
-        top: -5%;
-    }
-    .accordion-card__image{
-        position: relative;
-        right: 18%;
-        width: 100%;
+    .accordion-card__image-desktop{
+        display: none;
+        visibility: hidden;
     }
     .accordion-card__image-box{
+        /*--*/
         position: absolute;
-        width: 36%;
-        top: 38%;
-        right: 81.4%;
+        /*--*/
+        width: 40%;
+        /*--*/
+        top: 42%;
+        right: 79%;
     }
     /**/
     .accordion-card__info{
+        /*--flex-center-column*/
+        align-items: flex-start;
+        /*--*/
         flex-basis: 50%;
-
-        height: 100%;
-        /*flex-center-column*/
-        padding: 5% 0;
-        padding-right: 10%;
+        height: 100%;     
+        /*--*/
+        border-radius: 0 20px 20px 0;   
+        /*--*/
+        padding-top: 8%;
     }
     /**/
     .accordion-card__tittle{
+        /*--*/
+        display: inline-block;
+
+        width: 100%;
+        flex-basis: 15%;
+        /*--*/
         font-weight: 700;
         font-size: 30px;
-        align-self: flex-start;
     }
-        /**/
+        /****/
         .list-questions{
+            /*--*/
             position: relative;
+            /*--*/
+            width: 85%;
+            flex-basis: 85%;
             /*flex-center-column*/
+            justify-content: flex-start;
+            /*--*/
             list-style: none;
         }
         .list-questions__item{
             /*flex-center*/
             flex-wrap: wrap;
+            /*--*/
             width: 100%;
             flex-basis: 10%;
         }
         /**/
         .list-questions__question{
             position: relative;
+            /*--*/
             align-self: flex-start;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            /*--flex-center*/
             width: 100%;
-            padding: 5% 0;
-            padding-right: 5%;
+            padding: 4.2% 0;
+            padding-right: 4%;
         }
         .list-questions__tittle{
             display: inline-block;
             color: hsl(237, 12%, 33%);
             font-size: 14px;
             font-weight: 400;
-            flex-basis: 98.2%;
-            width: 96%;
+            flex-basis: 97%;
             padding-right: 10%;
         }
         .list-questions__tittle:hover{
@@ -133,11 +143,9 @@ body{
         }
         .list-questions__icon{
             display: inline-block;
-            width: 3%;
-            height: 100%;
+            flex-basis: 3%;
             transition-duration: 0.35s;
         }
-        /**/
         .list-questions__icon--rotate{
             transform: rotate(180deg);
         }
@@ -150,76 +158,111 @@ body{
         }
         /**/
         .list-questions__container-text--show{
-            max-height: 100px;
-            padding-bottom: 5%;
+            padding-bottom: 3%;
             padding-right: 5%;
+            max-height: 100px;
         }
         .list-questions__text{
             width: 100%;
             text-align: left;
         }
         .list-questions__split{
-            align-self: flex-end;
-
             display: block;
             width: 100%;
+            align-self: flex-end;
             border: none;
             border-bottom: 1px solid hsl(240, 5%, 91%);
         }
-
 /**/
 @media screen and (max-width: 1000px) {
-    /**/
     .accordion-card__picture{
+        /*--*/
         flex-basis: 60%;
     }
+    /****/
     .accordion-card__info{
+        /*--*/
         flex-basis: 40%;
-        padding-right: 5%;
     }
+    /****/
+        .list-questions__tittle{
+            flex-basis: 96%;
+        }
+        .list-questions__icon{
+            flex-basis: 4%;
+        }
 }
 /**/
-@media screen and (max-width: 700px) {
-    /**/
-    .accordion-card{
-        /*flex-center*/
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 0;
-
-        min-width: 0;
-        flex-basis: 90%;
-        height: 500px;
+@media screen and (max-width: 400px) {
+/**/
+.page-main{
+    margin: 0;
+    margin-top: 20vh;
+    margin-bottom: 5vh;
+}
+/****/
+.accordion-card{
+    /*--flex-center*/
+    flex-direction: column;
+    /*--*/
+    max-width: none; 
+    width: 90%;
+    min-width: 90%;
+    /*--*/
+    height: 520px;
+}
+    /****/
+    .accordion-card__picture{
+        /*--*/
+        width: 100%;
+        flex-basis: 22%;
+        /*--*/
+        background-image: url("/images/bg-pattern-mobile.svg");
+        background-size: 80%;
+        background-position: center top;
     }
+    .accordion-card__image-desktop{
+        /*--*/
+        position: absolute;
+        /*--*/
+        display: inline-block;
+        visibility: visible;
+        /*--*/
+        width: 90%;
         /**/
-        .accordion-card__picture{
-            width: 100%;
-            flex: 0 1 10%;
-
-            background-image: url("/images/bg-pattern-mobile.svg");
-            background-size: 80%;
-            background-repeat: no-repeat;
-            background-position: center top;
+        top: -106%;
+    }
+    .accordion-card__image-box{
+        /*--*/
+        display: none;
+        visibility: hidden;
+    }
+    /****/
+    .accordion-card__info{
+        /*--flex-center-column*/
+        align-items: center;
+        /*--*/
+        justify-content: flex-start;
+        /*--*/
+        width: 100%;
+        flex-basis: 78%;
+        /*--*/
+        border-radius: 0 0 20px 20px;
+    }
+    .accordion-card__tittle{
+        text-align: center;
+    }
+    /****/
+        .list-questions__question{
+            /*--flex-center*/
+            padding: 5% 0;
+            padding-right: 0;
         }
-        .accordion-card__image-container{
-            width: 80%;
-            top: -58%;
-            left: 10%;
+        .list-questions__tittle{
+            font-size: 13px;
+            flex-basis: 97%;
         }
-        .accordion-card__image{
-            right: 0;
-            src: url("/images/illustration-woman-online-mobile.svg");
-        }
-        .accordion-card__image-box{
-            top: -20%;
-            right: 58%;
-        }
-        .accordion-card__info{
-            justify-content: flex-start;
-
-            width: 100%;
-            flex: 0 1 90%;
-            padding: 0;
+        .list-questions__icon{
+            flex-basis: 3%;
         }
 }
